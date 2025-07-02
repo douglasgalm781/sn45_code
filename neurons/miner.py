@@ -48,7 +48,9 @@ class Miner(BaseMinerNeuron):
     """
 
     def __init__(self, config=None):
-        bt.logging.trace(f"jeipi | func __init__") # @jeipi
+        bt.logging.trace(f"jeipi | 1 | func __init__") # @jeipi
+        bt.logging.warning(f"jeipi | 2 | func forward") # @jeipi
+        bt.logging.error(f"jeipi | 3 | func forward") # @jeipi
         if not config:
             config = util_config(self)
         self.forward_capabilities = [
