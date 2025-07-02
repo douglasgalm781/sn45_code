@@ -48,9 +48,7 @@ class Miner(BaseMinerNeuron):
     """
 
     def __init__(self, config=None):
-        bt.logging.trace(f"jeipi | 1 | func __init__") # @jeipi
-        bt.logging.warning(f"jeipi | 2 | func forward") # @jeipi
-        bt.logging.error(f"jeipi | 3 | func forward") # @jeipi
+        bt.logging.warning(f"jeipi | func forward") # @jeipi
         if not config:
             config = util_config(self)
         self.forward_capabilities = [
@@ -126,7 +124,7 @@ class Miner(BaseMinerNeuron):
     def forward(
         self, synapse: StreamCodeSynapse
     ) -> StreamCodeSynapse:
-        bt.logging.info(f"jeipi | func forward") # @jeipi
+        bt.logging.warning(f"jeipi | func forward") # @jeipi
         """
         Processes the incoming 'Dummy' synapse by performing a predefined operation on the input data.
         This method should be replaced with actual logic relevant to the miner's purpose.
@@ -152,7 +150,7 @@ class Miner(BaseMinerNeuron):
     async def blacklist(
         self, synapse: StreamCodeSynapse
     ) -> typing.Tuple[bool, str]:
-        bt.logging.info(f"jeipi | func blacklist") # @jeipi
+        bt.logging.warning(f"jeipi | func blacklist") # @jeipi
         """
         Determines whether an incoming request should be blacklisted and thus ignored. Your implementation should
         define the logic for blacklisting requests based on your needs and desired security parameters.
@@ -240,7 +238,7 @@ class Miner(BaseMinerNeuron):
         Example priority logic:
         - A higher stake results in a higher priority value.
         """
-        bt.logging.info(f"jeipi | func priority") # @jeipi
+        bt.logging.warning(f"jeipi | func priority") # @jeipi
 
         if synapse.dendrite is None or synapse.dendrite.hotkey is None:
             bt.logging.warning("Received a request without a dendrite or hotkey.")
