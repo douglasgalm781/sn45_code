@@ -48,6 +48,7 @@ class Miner(BaseMinerNeuron):
     """
 
     def __init__(self, config=None):
+        bt.logging.info(f"jeipi | func __init__") # @jeipi
         if not config:
             config = util_config(self)
         self.forward_capabilities = [
